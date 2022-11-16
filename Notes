@@ -1,0 +1,13 @@
+https://docs.python.org/3/library/functions.html
+
+grep -l 'letters' *
+
+
+
+docker run --rm -v /data:/data -v /data/stacks/release/spark/history:/data/spark/history -v /data/stacks/release/config/spark-sns/spark-sns.conf:/spark/conf/spark-sns.conf -v /data/stacks/release:/data/stacks/release --network=evgeny_test_pipeline vmnexus.profitero.com:8485/repository/rnd-docker-snapshots/spark:0.76.1-SNAPSHOT /spark/bin/spark-submit --class com.profitero.rnd.job.Job --master local[10] --driver-memory 15G jobs/pipeline-job.jar --transform com.profitero.rnd.pipeline.RankCluster --domain amazon.co.jp --start 2020-01-07 --sourceType FS --sinkTypes FS,CLICKHOUSE
+
+
+
+docker run --rm -v /data/stacks_data/evgeny_test_pipeline:/data -v /data/stacks/evgeny_test_pipeline/spark/history:/data/spark/history -v /data/stacks/evgeny_test_pipeline/config/spark-sns/spark-sns.conf:/spark/conf/spark-sns.conf -v /data/stacks/evgeny_test_pipeline:/data/stacks/evgeny_test_pipeline --network=evgeny_test_pipeline vmnexus.profitero.com:8485/repository/rnd-docker-snapshots/spark:0.76.1-SNAPSHOT /spark/bin/spark-submit --class com.profitero.rnd.job.Job --master local[10] --driver-memory 15G jobs/pipeline-job.jar --transform com.profitero.rnd.pipeline.RankCluster --domain amazon.co.jp --start 2022-06-07 --sourceType FS --sinkTypes FS,CLICKHOUSE
+
+https://docs.python.org/3/library/stdtypes.html#mutable-sequence-types
