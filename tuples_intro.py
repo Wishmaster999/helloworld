@@ -15,3 +15,4 @@ print(metallica2)
 print(type(metallica2))
 metallica2[0] = "Master of Puppets"
 print(metallica2)
+print(metallica1)
