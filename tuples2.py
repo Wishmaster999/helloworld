@@ -5,3 +5,6 @@ albums = [("Welcome to my Nightmare", "Alice Cooper", 1975),
           ("Ride the Lightning", "Metallica", 1984),
           ]
 print(len(albums))
+
+for album in albums
+    print("Album")
