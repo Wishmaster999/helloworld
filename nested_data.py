@@ -39,7 +39,7 @@ albums = [
 ]
 
 #for name, artist, year, songs in albums:
-#    print("Album: {0}, Artist: {1}, Year: {2}, Songs: {3}".format(name, artist, year, songs))
+    #print("Album: {0}, Artist: {1}, Year: {2}, Songs: {3}".format(name, artist, year, songs))
 
 #print("****************************")
 
