@@ -1,57 +1,63 @@
 available_parts = [
     ("computer",
      [
-         (500, "USD"),
+         (500),
      ]
      ),
     ("monitor",
      [
-         (300, "USD"),
+         (300),
      ]
      ),
     ("keyboard",
      [
-         (25, "USD"),
+         (25),
      ]
      ),
     ("mouse",
      [
-         (10, "USD"),
+         (10),
      ]
      ),
     ("mouse mat",
      [
-         (6, "USD"),
+         (6),
      ]
      ),
     ("HDMI cable",
      [
-         (8, "USD"),
+         (8),
      ]
      ),
     ("DVD drive",
      [
-         (13, "USD"),
+         (13),
      ]
      ),
 ]
-articles = available_parts
-for article, price in articles:
-    print("Article: {0}, Price: {1}".format(article, price))
-    print(article)
+articles = []
+price = []
 
+for part in available_parts:
+    articles.append(part[0])
+    price.append(part[1][0])
+print(articles)
+print(price)
+
+valid_choices = []
 current_choice = "-"
 computer_parts = [] # create an empty list
 
 valid_choices = []
-for i in range (1, len(available_parts) + 1):
+for i in range (1, len(articles) + 1):
     valid_choices.append(str(i))
 print(valid_choices)
 
 while current_choice != '0':
     if current_choice in valid_choices:
         index = int (current_choice) - 1
-        chosen_part = available_parts[index]
+        chosen_part = articles[index]
+        chosen_price = price[index]
         if chosen_part in computer_parts:
             print("Removing {}".format(current_choice))
             computer_parts.remove(chosen_part)
@@ -62,7 +68,7 @@ while current_choice != '0':
 
     else:
         print("Please add options from the list below:")
-        for number, part in enumerate(available_parts):
+        for number, part in enumerate(articles):
             print("{0}: {1}".format(number + 1, part))
         print("Enter a number: ")
 
