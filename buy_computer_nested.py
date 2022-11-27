@@ -47,6 +47,7 @@ print(price)
 valid_choices = []
 current_choice = "-"
 computer_parts = [] # create an empty list
+total_price = []
 
 valid_choices = []
 for i in range (1, len(articles) + 1):
@@ -61,9 +62,11 @@ while current_choice != '0':
         if chosen_part in computer_parts:
             print("Removing {}".format(current_choice))
             computer_parts.remove(chosen_part)
+            total_price.remove(chosen_price)
         else:
             print("Adding {}".format(current_choice))
             computer_parts.append(chosen_part)
+            total_price.append(chosen_price)
         print ("Your list now contains: {}".format(computer_parts))
 
     else:
@@ -74,4 +77,8 @@ while current_choice != '0':
 
     current_choice = input()
 
-print(computer_parts)
+print("Your shopping list: ", computer_parts)
+
+for i in range(0, len(total_price)):
+    total_price[i] = int(total_price[i])
+print("Total price of chosen items: ", sum(total_price))
